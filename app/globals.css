@@ -2,26 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.principal-font {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.secondary-font {
+  font-family: "Volkhov", serif;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.bg-color-principal {
+  background: #fa7436;
+  color: white;
+}
+
+.bg-color-secondary {
+  background: #f7f8fc;
+}
+
+.bg-color-tertiary {
+  background: #ffe7db;
+}
+
+.text-color-principal {
+  color: #fa7436;
+}
+
+.text-color-secondary {
+  color: #666;
+}
+
+.border-color-primary {
+  border-color: #fa7436;
+}
+
+.margin-top-personal {
+  margin-top: 6rem;
+}
+
+.font-size-personal {
+  font-size: 0.8rem;
+}
+
+.shadow-personal {
+  -webkit-box-shadow: 3px -1px 64px -18px rgba(250, 116, 54, 1);
+  -moz-box-shadow: 3px -1px 64px -18px rgba(250, 116, 54, 1);
+  box-shadow: 3px -1px 64px -18px rgba(250, 116, 54, 1);
+}
+
+.w-personal {
+  width: 60% !important;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card-img-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Color de oscurecimiento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover .card-img-overlay {
+  opacity: 1;
+}
+.book-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inside-input-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
 }
