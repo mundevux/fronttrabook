@@ -9,13 +9,35 @@ import headerImageTwo from "./img/Group 1000003524Header_Image.png";
 import singUp from "./img/Sign Up.svg";
 import worthOfMoney from "./img/Worth of Money.svg";
 import exitingTravel from "./img/Exciting Travel.svg";
+import Card from "./components/Card";
 
 export default function Home() {
+  const infoCards = [
+    {
+      src: singUp,
+      textTitle: "Sign Up",
+      textDescription:
+        "Completes all the work associated with planning and processing",
+    },
+    {
+      src: worthOfMoney,
+      textTitle: "Worth of Money",
+      textDescription:
+        "After successful access then book from exclusive deals & pricing",
+    },
+    {
+      src: exitingTravel,
+      textTitle: "Exciting Travel",
+      textDescription:
+        "Start and explore a wide range of exciting travel experience.",
+    },
+  ];
+
   return (
     <NextUIProvider>
       <Navigation />
       <main className="">
-        <section className="container mx-auto   mb-5">
+        <section className="container mx-auto mb-5">
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 pt-5 ">
               <div className=" my-auto px-5">
@@ -85,7 +107,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-color-secondary mt-16 py-10">
+        <section className="bg-color-secondary mt-16 py-10 px-2">
           <div className="container mx-auto flex-col justify-center">
             <div className="w-50 mx-auto">
               <h2 className="text-black font-bold text-5xl secondary-font text-center pb-3">
@@ -100,34 +122,14 @@ export default function Home() {
             </div>
             <div className=" w-auto mx-auto mt-14">
               <div className="grid grid-cols-1 md:grid-cols-3 place-items-center my-5">
-                <div className="bg-white mx-4 py-4 px-4 rounded-lg shadow-xl w-60 h-full">
-                  <Image src={singUp} alt="" className="h-25" />
-                  <h3 className="my-2 font-semibold text-base">Sign Up</h3>
-                  <p className="text-color-secondary font-size-personal my-0">
-                    Completes all the work associated with planning and
-                    processing
-                  </p>
-                </div>
-                <div className="bg-white mx-4 py-4 px-4 rounded-lg shadow-xl w-60 h-full">
-                  <Image src={worthOfMoney} alt="" className="h-25" />
-                  <h3 className="my-2 font-semibold text-base">
-                    Worth of Money
-                  </h3>
-                  <p className="text-color-secondary font-size-personal my-0">
-                    After successful access then book from exclusive deals &
-                    pricing
-                  </p>
-                </div>
-                <div className="bg-white mx-4 py-4 px-4 rounded-lg shadow-xl w-60 h-full">
-                  <Image src={exitingTravel} alt="" className="h-25" />
-                  <h3 className="my-2 font-semibold text-base">
-                    Exciting Travel
-                  </h3>
-                  <p className="text-color-secondary font-size-personal my-0">
-                    Start and explore a wide range of exciting travel
-                    experience.
-                  </p>
-                </div>
+                {infoCards.map((card, index) => (
+                  <Card
+                    key={`${card}-${index}`}
+                    src={card.src} // Accede a la propiedad src dentro del objeto
+                    textTitle={card.textTitle}
+                    textDescription={card.textDescription}
+                  />
+                ))}
               </div>
             </div>
           </div>
