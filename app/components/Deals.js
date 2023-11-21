@@ -6,7 +6,7 @@ export default function Deals() {
   const [deals, setDeals] = useState([]);
 
   const loadDeals = async () => {
-    const response = await fetch("http://localhost:4000/ofertas");
+    const response = await fetch("https://backendtrabook.onrender.com/ofertas");
     const data = await response.json();
     setDeals(data);
   };

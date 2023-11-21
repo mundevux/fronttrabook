@@ -5,7 +5,9 @@ export default function Testimoniasl() {
   const [testimonials, setTestimonials] = useState([]);
 
   const loadTestimoniasl = async () => {
-    const response = await fetch("http://localhost:4000/testimonios");
+    const response = await fetch(
+      "https://backendtrabook.onrender.com/testimonios"
+    );
     const data = await response.json();
     setTestimonials(data);
   };

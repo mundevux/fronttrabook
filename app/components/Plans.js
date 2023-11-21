@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 export default function Plans() {
   const [plans, setPlans] = useState([]);
   const loadPlans = async () => {
-    const response = await fetch("http://localhost:4000/planes");
+    const response = await fetch("https://backendtrabook.onrender.com/planes");
     const data = await response.json();
     setPlans(data);
   };

@@ -6,7 +6,7 @@ export default function Blog() {
   const [blogs, setBlogs] = useState([]);
 
   const loadBlogs = async () => {
-    const response = await fetch("http://localhost:4000/blog");
+    const response = await fetch("https://backendtrabook.onrender.com/blog");
     const data = await response.json();
     setBlogs(data);
   };
